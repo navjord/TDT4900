@@ -1,0 +1,76 @@
+<template name="main">
+	
+	{{#if routeIS "articles"}}
+		{{> articles}}
+	{{/if}}
+	{{#if routeIS "events"}}
+		This page is even
+	{{/if}}
+	{{#if routeIS "rules"}}
+		This page is ruled
+	{{/if}}
+	{{#if routeIS "prediction"}}
+		This page is predate
+	{{/if}}
+	{{#if routeIS "simulate"}}
+		<h4>Simulation</h4>
+		Simulation is done. Upload more prices and articles to run another.
+	{{/if}}
+	{{#if routeIS "settings"}}
+		{{> settings}}
+	{{/if}}
+</template>
+
+<template name="articles">
+	<h4>Raw article/event exploration</h4>
+	<div id="gain-loss-chart"><span>Days by Gain or Loss</span></div>
+	<div id="fluctuation-chart"><span>Days by Gain or Loss</span></div>
+	<div id="quarter-chart"><span>Days by Gain or Loss</span></div>
+	<div id="day-of-week-chart"><span>Days by Gain or Loss</span></div>
+	<div id="monthly-move-chart"><span>Days by Gain or Loss</span></div>
+	<div id="monthly-volume-chart"><span>Days by Gain or Loss</span></div>
+	<div id="yearly-bubble-chart"><span>Days by Gain or Loss</span></div>
+</template>
+
+<template name="settings">
+	<div>
+		
+	</div>
+
+	<div>
+		<h4>Upload stock info</h4>
+		<p>Upload as CSV-file where ticker is the name, with the following columns: Date, First Price, Last Price. </p>
+		{{> uploadStock}}
+	</div>
+	<div>
+		<h4>Upload company accounts</h4>
+		<p>Upload as CSV-file where ticker is the name, with the following columns: </p>
+		{{> uploadStock}}
+	</div>	
+	<div>	
+		<h4>Upload news articles</h4>
+		<p>Upload as html-file where date is the name.</p>
+		{{> uploadArticles}}
+	</div>
+</template>
+
+<template name="uploadStock">
+  <div id="upload-div">
+	<input type="file" id="files" name="files[]" multiple />
+	<output id="list"></output>
+  </div>
+</template>
+
+<template name="uploadAccounts">
+  <div id="upload-div2">
+	<input type="file" id="files2" name="files[]" multiple />
+	<output id="list2"></output>
+  </div>
+</template>
+
+<template name="uploadArticles">
+  <div id="upload-div3">
+	<input type="file" id="artfile" name="artfiles[]" multiple />
+	<output id="list3"></output>
+  </div>
+</template>

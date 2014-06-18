@@ -1,0 +1,7 @@
+body {
+  padding-top: 60px;
+}
+
+#monthly-volume-chart g.y {
+            display: none;
+}
